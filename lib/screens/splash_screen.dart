@@ -1,3 +1,4 @@
+import 'package:ai_study/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -47,8 +48,29 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
       duration: const Duration(seconds: 1),
     )..repeat();
-  }
+  
+ Future.delayed(
+    const Duration(seconds: 3),
+    (){
 
+
+      Navigator.pushReplacement(
+
+        context,
+
+        MaterialPageRoute(
+
+          builder:(context)
+          => const OnboardingScreen(),
+
+        ),
+
+      );
+
+
+    },
+
+  );}
   @override
   void dispose() {
     fadeController.dispose();

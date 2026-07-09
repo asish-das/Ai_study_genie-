@@ -1,4 +1,4 @@
-import 'package:ai_study/splash_screen.dart';
+import 'package:ai_study/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner:false,
 
-      home:SplashScreen(),
+      home: SplashScreen(),
 
     );
 
