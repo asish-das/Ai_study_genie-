@@ -1,3 +1,4 @@
+import 'package:ai_study/screens/login_page.dart';
 import 'package:ai_study/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -61,7 +62,7 @@ class _SplashScreenState extends State<SplashScreen>
         MaterialPageRoute(
 
           builder:(context)
-          => const OnboardingScreen(),
+          => const LoginScreen(),
 
         ),
 
