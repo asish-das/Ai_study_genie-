@@ -1,4 +1,4 @@
-import 'package:ai_study/user/screens/subject_selection_page.dart';
+import 'package:ai_study/user/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -268,12 +268,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
 
-                      children: [
-                        indicator(true),
-
-
-                        indicator(false),
-                      ],
+                      children: [indicator(true), indicator(false)],
                     ),
 
                     const SizedBox(height: 32),
@@ -319,7 +314,15 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                               elevation: 8,
                             ),
 
-                            onPressed: () {Navigator.push(context, MaterialPageRoute( builder: (context) => const SelectSubjectScreen()));},
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginScreen(),
+                                ),
+                              );
+                            },
 
                             child: const Row(
                               children: [
