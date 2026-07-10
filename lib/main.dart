@@ -1,4 +1,5 @@
 import 'package:ai_study/user/provider_logic/login_provider.dart';
+import 'package:ai_study/user/provider_logic/register_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +25,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => LoginProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (context) => LoginProvider()),
+        ChangeNotifierProvider(create: (context) => RegisterProvider()),
+      ],
 
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,

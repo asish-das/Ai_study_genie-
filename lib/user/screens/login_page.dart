@@ -1,5 +1,6 @@
 import 'package:ai_study/user/provider_logic/login_provider.dart';
 import 'package:ai_study/user/screens/onboarding_screen.dart';
+import 'package:ai_study/user/screens/register.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -322,24 +323,44 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       const SizedBox(height: 30),
 
-                      RichText(
-                        text: const TextSpan(
-                          style: TextStyle(color: Color(0xff434655)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
 
-                          children: [
-                            TextSpan(text: "Don't have an account? "),
+                        children: [
+                          const Text(
+                            "Don't have an account?",
 
-                            TextSpan(
-                              text: "Create an Account",
+                            style: TextStyle(
+                              color: Color(0xff434655),
+
+                              fontSize: 13,
+                            ),
+                          ),
+
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+
+                                MaterialPageRoute(
+                                  builder: (context) => RegisterPage(),
+                                ),
+                              );
+                            },
+
+                            child: const Text(
+                              "Create an Account",
 
                               style: TextStyle(
                                 color: Color(0xff004ac6),
 
                                 fontWeight: FontWeight.bold,
+
+                                fontSize: 13,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
