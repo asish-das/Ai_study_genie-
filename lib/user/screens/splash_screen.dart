@@ -1,4 +1,4 @@
-import 'package:ai_study/screens/login_page.dart';
+import 'package:ai_study/user/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 

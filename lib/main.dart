@@ -1,4 +1,4 @@
-import 'package:ai_study/screens/splash_screen.dart';
+import 'package:ai_study/user/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 

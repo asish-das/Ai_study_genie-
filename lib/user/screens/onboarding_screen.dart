@@ -1,4 +1,4 @@
-import 'package:ai_study/screens/subject_selection_page.dart';
+import 'package:ai_study/user/screens/subject_selection_page.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {

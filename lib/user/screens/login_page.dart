@@ -1,4 +1,4 @@
-import 'package:ai_study/screens/onboarding_screen.dart';
+import 'package:ai_study/user/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
