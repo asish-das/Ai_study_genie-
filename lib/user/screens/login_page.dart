@@ -1,5 +1,7 @@
+import 'package:ai_study/user/provider_logic/login_provider.dart';
 import 'package:ai_study/user/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -9,7 +11,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool hidePassword = true;
+  late LoginProvider loginProvider;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    loginProvider = Provider.of<LoginProvider>(context);
+  }
 
   final emailController = TextEditingController();
 
@@ -87,11 +95,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     children: [
                       // LOGO
-                      Image.network(
-                        "https://lh3.googleusercontent.com/aida/AP1WRLvx17E_fKiQVD_hIK10IdPJuEOu4BfXehrxO3gUvnb6_QAKgp82WjQY3RoWgz_bcjOPb_Fvloq-loxe38i8nFDwxwIeeMJzYcumAyGDteuFG3KPvXXwn-AvEiYp5wLPeE_4hf47jFjDU1vH7jFklMbDMqK9puhyuP7GjAguIKWqsVdP5eYQDQ9VLQVEV6HZZRzUOMMruZv58ss7kT-iKmwglzzJnDFTi5NF9pECZgYIfMELZRw6OJgaZawg",
-
-                        width: 60,
-                        height: 60,
+                      Container(
+                        child: Image.asset(
+                          "assets/splash.png",
+                          height: 60,
+                          width: 60,
+                        ),
                       ),
 
                       const SizedBox(height: 10),
@@ -176,7 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextField(
                         controller: passwordController,
 
-                        obscureText: hidePassword,
+                        obscureText: loginProvider.hidePassword,
 
                         decoration: InputDecoration(
                           filled: true,
@@ -190,17 +199,15 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
 
                           suffixIcon: IconButton(
-                            icon: Icon(
-                              hidePassword
-                                  ? Icons.visibility_outlined
-                                  : Icons.visibility_off_outlined,
-                            ),
-
                             onPressed: () {
-                              setState(() {
-                                hidePassword = !hidePassword;
-                              });
+                              loginProvider.passwordVisibility();
                             },
+
+                            icon: Icon(
+                              loginProvider.hidePassword
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                            ),
                           ),
 
                           hintText: "••••••••",
@@ -231,30 +238,36 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
 
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const OnboardingScreen()));
+                            loginProvider.loginUser(
+                              email: emailController.text.trim(),
+
+                              password: passwordController.text.trim(),
+
+                              context: context,
+                            );
                           },
 
-                          child: const Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-
-                            children: [
-                              Text(
-                                "Sign In",
-
-                                style: TextStyle(
-                                  fontSize: 14,
-
-                                  fontWeight: FontWeight.w600,
-
+                          child: loginProvider.loading
+                              ? const CircularProgressIndicator(
                                   color: Colors.white,
+                                )
+                              : const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+
+                                  children: [
+                                    Text(
+                                      "Sign In",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+
+                                    SizedBox(width: 10),
+
+                                    Icon(
+                                      Icons.arrow_forward,
+                                      color: Colors.white,
+                                    ),
+                                  ],
                                 ),
-                              ),
-
-                              SizedBox(width: 8),
-
-                              Icon(Icons.arrow_forward, color: Colors.white),
-                            ],
-                          ),
                         ),
                       ),
 

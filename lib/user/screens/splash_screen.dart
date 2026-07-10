@@ -1,4 +1,4 @@
-import 'package:ai_study/user/screens/login_page.dart';
+import 'package:ai_study/user/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -50,27 +50,29 @@ class _SplashScreenState extends State<SplashScreen>
     )..repeat();
   
  Future.delayed(
-    const Duration(seconds: 3),
-    (){
+
+  const Duration(seconds:3),
+
+  (){
 
 
-      Navigator.pushReplacement(
+   Navigator.pushReplacement(
 
-        context,
+    context,
 
-        MaterialPageRoute(
+    MaterialPageRoute(
 
-          builder:(context)
-          => const LoginScreen(),
+     builder:(context)
+     => const OnboardingScreen(),
 
-        ),
+    ),
 
-      );
+   );
 
 
-    },
+  }
 
-  );}
+ );}
   @override
   void dispose() {
     fadeController.dispose();
@@ -148,12 +150,11 @@ class _SplashScreenState extends State<SplashScreen>
                               );
                             },
 
-                            child: Image.network(
-                              "https://lh3.googleusercontent.com/aida/AP1WRLvx17E_fKiQVD_hIK10IdPJuEOu4BfXehrxO3gUvnb6_QAKgp82WjQY3RoWgz_bcjOPb_Fvloq-loxe38i8nFDwxwIeeMJzYcumAyGDteuFG3KPvXXwn-AvEiYp5wLPeE_4hf47jFjDU1vH7jFklMbDMqK9puhyuP7GjAguIKWqsVdP5eYQDQ9VLQVEV6HZZRzUOMMruZv58ss7kT-iKmwglzzJnDFTi5NF9pECZgYIfMELZRw6OJgaZawg",
-
+                            child: Image.asset(
+                              "assets/splash.png",
                               width: 180,
                               height: 180,
-                            ),
+                            )
                           ),
 
                           const SizedBox(height: 25),
