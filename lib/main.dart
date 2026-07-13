@@ -1,3 +1,4 @@
+import 'package:ai_study/user/provider_logic/dashborad_provider.dart';
 import 'package:ai_study/user/provider_logic/login_provider.dart';
 import 'package:ai_study/user/provider_logic/register_provider.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => LoginProvider()),
         ChangeNotifierProvider(create: (context) => RegisterProvider()),
+        ChangeNotifierProvider(create: (_) => DashboardProvider()),
       ],
 
       child: const MaterialApp(

@@ -1,5 +1,4 @@
 import 'package:ai_study/user/provider_logic/login_provider.dart';
-import 'package:ai_study/user/screens/onboarding_screen.dart';
 import 'package:ai_study/user/screens/register.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
