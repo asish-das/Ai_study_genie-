@@ -1,9 +1,10 @@
 import 'package:ai_study/user/provider_logic/dashborad_provider.dart';
+import 'package:ai_study/user/widgets/dashborad/progres_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/dashboard_appbar.dart';
-import '../widgets/bottom_navbar.dart';
+import '../widgets/dashborad/dashboard_appbar.dart';
+import '../widgets/dashborad/bottom_navbar.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -26,9 +27,16 @@ class DashboardPage extends StatelessWidget {
 
         padding: const EdgeInsets.all(20),
 
-        child: Column(
+        child:
+        Column(
 
-          children: [
+  children: [
+
+    const ProgressCard(),
+
+  ],
+
+) 
 
             /// Progress Card
             /// Quick Actions
@@ -37,9 +45,7 @@ class DashboardPage extends StatelessWidget {
             /// Study Tip
             /// Activity Timeline
 
-          ],
-
-        ),
+       
 
       ),
 

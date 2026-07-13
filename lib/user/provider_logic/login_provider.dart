@@ -1,4 +1,6 @@
+import 'package:ai_study/user/screens/dashboard.dart';
 import 'package:ai_study/user/screens/subject_selection_page.dart';
+import 'package:ai_study/user/widgets/dashborad/dashboard_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -48,7 +50,7 @@ class LoginProvider extends ChangeNotifier {
       Navigator.pushReplacement(
         context,
 
-        MaterialPageRoute(builder: (context) => const SelectSubjectScreen()),
+        MaterialPageRoute(builder: (context) => const DashboardPage()),
       );
     } on FirebaseAuthException catch (error) {
       loading = false;
