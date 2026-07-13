@@ -1,6 +1,4 @@
 import 'package:ai_study/user/screens/dashboard.dart';
-import 'package:ai_study/user/screens/subject_selection_page.dart';
-import 'package:ai_study/user/widgets/dashborad/dashboard_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
