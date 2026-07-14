@@ -2,6 +2,7 @@ import 'package:ai_study/user/provider_logic/dashborad_provider.dart';
 import 'package:ai_study/user/widgets/dashborad/progres_card.dart';
 import 'package:ai_study/user/widgets/dashborad/quick_actions.dart';
 import 'package:ai_study/user/widgets/dashborad/recent_notes.dart';
+import 'package:ai_study/user/widgets/dashborad/upcoming_exam.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -45,7 +46,7 @@ class DashboardPage extends StatelessWidget {
 
             SizedBox(height: 24),
 
-            //UpcomingExam(),
+            UpcomingExam(),
 
             SizedBox(height: 24),
 
