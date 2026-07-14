@@ -1,21 +1,15 @@
 class NoteModel {
+  final String title;
+  final String subject;
+  final String description;
+  final String imageUrl;
+  final String lastEdited;
 
- String title;
-
- String subject;
-
- String description;
-
- String image;
-
- String edited;
-
- NoteModel({
-   required this.title,
-   required this.subject,
-   required this.description,
-   required this.image,
-   required this.edited,
- });
-
+  const NoteModel({
+    required this.title,
+    required this.subject,
+    required this.description,
+    required this.imageUrl,
+    required this.lastEdited,
+  });
 }
