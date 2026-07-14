@@ -1,3 +1,6 @@
+import 'package:ai_study/user/models/exam_model.dart';
+import 'package:ai_study/user/models/note_model.dart';
+import 'package:ai_study/user/models/quick_action_model.dart';
 import 'package:flutter/material.dart';
 
 class DashboardProvider extends ChangeNotifier {
@@ -9,32 +12,9 @@ class DashboardProvider extends ChangeNotifier {
   }
 
   // Temporary static data
-  String userName = "asish";
+  String userName = "Alex";
   int progress = 75;
-}
-class QuickAction {
 
-  final String title;
-
-  final IconData icon;
-
-  final Color background;
-
-  final Color iconColor;
-
-  QuickAction({
-
-    required this.title,
-
-    required this.icon,
-
-    required this.background,
-
-    required this.iconColor,
-
-  });
-
-}
 List<QuickAction> quickActions = [
 
   QuickAction(
@@ -66,3 +46,41 @@ List<QuickAction> quickActions = [
   ),
 
 ];
+
+final List<NoteModel> notes = [
+
+  const NoteModel(
+    title: "Molecular Biology 101",
+    subject: "Biology",
+    description: "Cell structure, DNA replication and protein synthesis.",
+    imageUrl: "",
+    lastEdited: "2 hours ago",
+  ),
+
+  const NoteModel(
+    title: "Calculus Integrals",
+    subject: "Mathematics",
+    description: "Definite and indefinite integration with worked examples.",
+    imageUrl: "",
+    lastEdited: "Yesterday",
+  ),
+
+];
+List<ExamModel> exams = [
+
+  ExamModel(
+    subject: "Biology",
+    title: "Final Semester Exam",
+    date: "May 12",
+    remainingDays: "4 days left",
+  ),
+
+  ExamModel(
+    subject: "Calculus",
+    title: "Midterm Revision",
+    date: "May 15",
+    remainingDays: "7 days left",
+  ),
+
+];}
+
