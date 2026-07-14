@@ -1,3 +1,4 @@
+import 'package:ai_study/user/models/note_model.dart';
 import 'package:flutter/material.dart';
 
 class DashboardProvider extends ChangeNotifier {
@@ -65,4 +66,7 @@ List<QuickAction> quickActions = [
     iconColor: Color(0xff004AC6),
   ),
 
+];
+
+List<NoteModel> notes=[
 ];
