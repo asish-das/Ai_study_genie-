@@ -1,3 +1,4 @@
+import 'package:ai_study/user/models/exam_model.dart';
 import 'package:ai_study/user/models/note_model.dart';
 import 'package:flutter/material.dart';
 
@@ -69,4 +70,21 @@ List<QuickAction> quickActions = [
 ];
 
 List<NoteModel> notes=[
+];
+List<ExamModel> exams = [
+
+  ExamModel(
+    subject: "Biology",
+    title: "Final Semester Exam",
+    date: "May 12",
+    remainingDays: "4 days left",
+  ),
+
+  ExamModel(
+    subject: "Calculus",
+    title: "Midterm Revision",
+    date: "May 15",
+    remainingDays: "7 days left",
+  ),
+
 ];
