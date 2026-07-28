@@ -3,7 +3,6 @@ import 'package:ai_study/user/widgets/dashborad/activity_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'activity_timeline.dart';
 
 class ActivityTimeline extends StatelessWidget {
   const ActivityTimeline({super.key});
