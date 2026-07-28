@@ -82,5 +82,9 @@ List<ExamModel> exams = [
     remainingDays: "7 days left",
   ),
 
-];}
+];
+String studyTipTitle = "Study Tip";
+
+String studyTip =
+    "Take a 5-minute break after every 25 minutes of focused study to improve concentration and reduce mental fatigue.";}
 
