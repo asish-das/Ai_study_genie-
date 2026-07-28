@@ -1,6 +1,8 @@
+import 'package:ai_study/user/models/activity_model.dart';
 import 'package:ai_study/user/models/exam_model.dart';
 import 'package:ai_study/user/models/note_model.dart';
 import 'package:ai_study/user/models/quick_action_model.dart';
+import 'package:ai_study/user/models/study_tip_model.dart';
 import 'package:flutter/material.dart';
 
 class DashboardProvider extends ChangeNotifier {
@@ -83,8 +85,53 @@ List<ExamModel> exams = [
   ),
 
 ];
+
 String studyTipTitle = "Study Tip";
 
 String studyTip =
-    "Take a 5-minute break after every 25 minutes of focused study to improve concentration and reduce mental fatigue.";}
+    "Take a 5-minute break after every 25 minutes of focused study to improve concentration and reduce mental fatigue.";
+    
+    List<ActivityModel> activities = [
+  ActivityModel(
+    title: "Uploaded PDF",
+    subtitle: "Biology Notes",
+    time: "2 hours ago",
+    icon: "pdf",
+  ),
+  ActivityModel(
+    title: "Generated Quiz",
+    subtitle: "Cell Biology",
+    time: "Yesterday",
+    icon: "quiz",
+  ),
+  ActivityModel(
+    title: "Completed Flashcards",
+    subtitle: "20 Cards",
+    time: "2 days ago",
+    icon: "flashcard",
+  ),
+];
+List<StudyTipModel> studyTips = [
+  StudyTipModel(
+    title: "Pomodoro Technique",
+    description:
+        "Study for 25 minutes, then take a 5-minute break to improve concentration and reduce mental fatigue.",
+    category: "Productivity",
+  ),
+
+  StudyTipModel(
+    title: "Active Recall",
+    description:
+        "Instead of rereading your notes, close them and try to remember the concepts from memory.",
+    category: "Learning",
+  ),
+
+  StudyTipModel(
+    title: "Spaced Repetition",
+    description:
+        "Review topics over increasing intervals instead of cramming everything in one day.",
+    category: "Revision",
+  ),
+];
+    }
 
