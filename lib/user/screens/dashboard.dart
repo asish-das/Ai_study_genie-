@@ -6,7 +6,6 @@ import 'package:ai_study/user/widgets/dashborad/upcoming_exam.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 import '../widgets/dashborad/dashboard_appbar.dart';
 import '../widgets/dashborad/bottom_navbar.dart';
 
@@ -15,11 +14,9 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final provider = context.watch<DashboardProvider>();
 
     return Scaffold(
-
       backgroundColor: const Color(0xffF8FAFC),
 
       appBar: const PreferredSize(
@@ -28,15 +25,11 @@ class DashboardPage extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
-
         padding: const EdgeInsets.all(20),
 
-        child:
-        Column(
-
-  children: [
-
-    const ProgressCard(),
+        child: Column(
+          children: [
+            const ProgressCard(),
 
             QuickActions(),
 
@@ -49,26 +42,18 @@ class DashboardPage extends StatelessWidget {
             UpcomingExam(),
 
             SizedBox(height: 24),
+          ],
+        ),
 
-  ],
-
-) 
-
-            /// Progress Card
-            /// Quick Actions
-            /// Recent Notes
-            /// Upcoming Exams
-            /// Study Tip
-            /// Activity Timeline
-
-       
-
+        /// Progress Card👍
+        /// Quick Actions👍
+        /// Recent Notes👍
+        /// Upcoming Exams👍
+        /// Study Tip
+        /// Activity Timeline
       ),
 
-      bottomNavigationBar: BottomNavBar(
-        currentIndex: provider.currentIndex,
-      ),
-
+      bottomNavigationBar: BottomNavBar(currentIndex: provider.currentIndex),
     );
   }
 }
